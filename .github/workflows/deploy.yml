@@ -18,6 +18,17 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Conectar VPN con OpenConnect
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openconnect
+          echo "${{ secrets.VPN_PASS }}" | sudo openconnect \
+            --protocol=anyconnect \
+            -u "${{ secrets.VPN_USER }}" \
+            --passwd-on-stdin \
+            --background \
+            "${{ secrets.VPN_HOST }}"
+          sleep 10      
       #- name: Build - lint
       #  run: |
       #    yamllint config .github
