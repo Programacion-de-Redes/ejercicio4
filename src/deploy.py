@@ -1,4 +1,5 @@
 """Aplica la configuración por RESTCONF. --check = prueba en seco."""
+# Ejemplo
 import argparse
 import sys
 import yaml
