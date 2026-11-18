@@ -1,4 +1,5 @@
 """Aplica la configuración por RESTCONF. --check = prueba en seco."""
+# Modificarlo desde GitHub
 # Ejemplo
 import argparse
 import sys
